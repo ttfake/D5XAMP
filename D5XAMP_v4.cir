@@ -1,0 +1,24 @@
+.title KiCad schematic
+.include "/home/tim/projects/Electronics/SpiceModels/MC33071.mod"
+J4 Input_1 GND Conn_Coaxial
+R5 Input_1 GND 17.4k
+R6 Net-_R6-Pad1_ Output_1 52.2
+C1 GND +24V 0.1u
+XU1 Net-_R6-Pad1_ Net-_R2-Pad2_ Input_1 GND Input_2 Net-_R10-Pad2_ Net-_R7-Pad2_ +24V MC33071#0
+J1 GND Output_1 Output 1
+J2 GND +24V PWR
+U2 Net-_R7-Pad2_ Net-_R9-Pad1_ Net-_R11-Pad1_ Net-_R6-Pad1_ Net-_R2-Pad1_ Net-_R4-Pad1_ SW_DPDT_Standard
+J3 GND Output_2 Output 2
+V2 Input_2 GND dc 0 ac 1 sin(0 10 10)
+R7 Output_2 Net-_R7-Pad2_ 52.2
+R8 GND Input_2 17.4k
+J5 Input_2 GND Conn_Coaxial
+R10 GND Net-_R10-Pad2_ 20k
+R9 Net-_R9-Pad1_ Net-_R10-Pad2_ 100k
+R11 Net-_R11-Pad1_ Net-_R10-Pad2_ 140k
+R2 Net-_R2-Pad1_ Net-_R2-Pad2_ 100k
+R4 Net-_R4-Pad1_ Net-_R2-Pad2_ 140k
+R3 GND Net-_R2-Pad2_ 20k
+V1 Input_1 GND dc 0 ac 1 sin(0 10 10)
+.ac dec 10 1 100k
+.end
